@@ -7,21 +7,21 @@ const AuthContext = ({children}) => {
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
 
-    useEffect(() => {
-      const verifyUser = async ()  => {
-        try{
-          const response = await axios.get('http://localhost: 5000/api/auth/verify')
-          if(response.data.success){
-            setUser(response.data.user);
-          }
-        }catch(error){
-          if(error.response && !error.response.data.error){
-            navigate('/login');
-          }
-        }
+    // useEffect(() => {
+    //   const verifyUser = async ()  => {
+    //     try{
+    //       const response = await axios.get('http://localhost: 5000/api/auth/verify')
+    //       if(response.data.success){
+    //         setUser(response.data.user);
+    //       }
+    //     }catch(error){
+    //       if(error.response && !error.response.data.error){
+    //         navigate('/login');
+    //       }
+    //     }
 
-      }
-     },[])
+    //   }
+    //  },[])
 
     const login = (user) => {
         setUser(user);
