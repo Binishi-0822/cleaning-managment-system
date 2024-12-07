@@ -1,11 +1,9 @@
 import React, {createContext, useState, useContext, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
 
 const userContext = createContext({})
 
 const AuthContext = ({children}) => {
     const [user, setUser] = useState(null)
-    const navigate = useNavigate()
 
     // useEffect(() => {
     //   const verifyUser = async ()  => {
